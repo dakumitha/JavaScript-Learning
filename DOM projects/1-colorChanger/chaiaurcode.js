@@ -1,5 +1,3 @@
-const colorBox = document.querySelectorAll('.button');
-console.log(colorBox);
+const greyItem = document.getElementById("grey");
 
-const colorItem = document.getElementById('grey');
-colorItem.color = '#fff';
+greyItem.style.backgroundColor = "green";
