@@ -8,10 +8,11 @@ const remaining = document.querySelector(".lastResult");
 const lowOrHi = document.querySelector(".lowOrHi");
 const startOver = document.querySelector(".resultParas");
 
-const p = document.querySelector("p");
+const p = document.createElement("p");
 
 let playGame = true;
 const prevGuess = [];
+let numGuess = 1;
 
 if (playGame) {
   submit.addEventListener("click", function (event) {
@@ -65,7 +66,7 @@ function endGame() {
   userInput.value = "";
   userInput.setAttribute("disabled", "");
   p.classList.add("button");
-  p.innerHTML = `<h2 id="mewGame">Start new Game</h2>`;
+  p.innerHTML = `<button id="mewGame">Start new Game</button>`;
   startOver.appendChild(p);
   playGame = false;
   newGame();
@@ -75,11 +76,11 @@ function newGame() {
   newGameButton.addEventListener("click", function (event) {
     randomNumber = parseInt(Math.random() * 100 + 1);
     prevGuess = [];
-    numGuess =1;
+    numGuess = 1;
     guessSlot.innerHTML = "";
-    remaining.innerHTML = `${11-numGuess}`;
+    remaining.innerHTML = `${11 - numGuess}`;
     userInput.removeAttribute("disabled");
     startOver.removeChild(p);
     playGame = true;
-}
+  });
 }
